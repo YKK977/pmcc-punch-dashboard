@@ -1,32 +1,32 @@
-# Yanbu SRU PMCC Punch Dashboard
+# Yanbu SRU PMCC Punch Dashboard v5
 
-## GitHub Pages 업로드 방법
+## 운영 방식
 
-Repository 루트에 아래 파일/폴더를 그대로 업로드합니다.
+GitHub repo의 `data` 폴더에 PMCC 원본 Excel 파일을 올리면 됩니다.
 
-```text
-index.html
-data/status.json
-data/pmcc_source.xlsx
-```
-
-GitHub Pages URL 예:
+예시:
 
 ```text
-https://ykk977.github.io/pmcc-punch-dashboard/
+data/
+  (Consolidated) PMCC Punch List_20260620.xlsx
+  (Consolidated) PMCC Punch List_20260624.xlsx
 ```
 
-Notion에서는 `/embed` 입력 후 위 URL을 붙여넣으면 됩니다.
+대시보드는 `data` 폴더 안의 `.xlsx/.xlsm/.xls` 파일을 GitHub API로 조회한 뒤, 파일명에 포함된 `YYYYMMDD`가 가장 최신인 파일을 자동 로드합니다.
 
-## 주간 업데이트 방법
+## 파일명 규칙
 
-현재 대시보드는 `data/status.json`을 읽습니다.
+파일명은 고정할 필요 없습니다. 다만 최신 파일 판단을 위해 `20260624` 같은 8자리 날짜가 들어가면 가장 안정적입니다.
 
-- 원본 Excel 다운로드 버튼은 `data/pmcc_source.xlsx`를 가리킵니다.
-- 최신 원본을 공유하려면 `data/pmcc_source.xlsx`를 최신 파일로 교체합니다.
-- 수치 업데이트는 `data/status.json`만 교체하면 됩니다.
+## 버튼 설명
 
-## PMCC Master
+- `Reload Source Excel`: GitHub `data` 폴더에서 최신 Excel 다시 로드
+- `Preview Local Excel`: 내 PC의 Excel을 임시 미리보기. GitHub에는 저장되지 않음
+- `Download Source Excel`: 현재 대시보드가 읽은 원본 Excel 다운로드
 
-PMCC-01 및 PMCC-02는 Completed로 고정되어 있습니다.
-PMCC-03~PMCC-14는 향후 데이터가 들어오면 `status.json`에서 Total/Remaining 등을 채우면 자동 표시됩니다.
+## 계산 기준
+
+- KPI는 `Overall Status` 시트의 `OVERALL` 블록 아래 `Sub Total` 행만 사용합니다.
+- PMCC별 Chart는 각 PMCC 블록의 `Sub Total` 행을 사용합니다.
+- PMCC-01/02는 Completed로 고정 표시합니다.
+- PMCC-01~14까지 Master 목록에 반영했습니다.

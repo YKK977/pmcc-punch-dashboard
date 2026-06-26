@@ -2,143 +2,84 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Yanbu SRU PMCC Punch Dashboard</title>
 <style>
-:root{--bg:#f4f7fb;--surface:#fff;--ink:#0b1736;--muted:#6b7280;--line:#e6eaf2;--blue:#1d4ed8;--blue2:#60a5fa;--navy:#082552;--green:#16a34a;--amber:#f59e0b;--red:#ef4444;--gray:#9ca3af;--shadow:0 18px 48px rgba(8,37,82,.12);--radius:22px}*{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif;background:radial-gradient(circle at top left,#dcecff 0,#f4f7fb 42%,#f8fafc 100%);color:var(--ink)}.page{max-width:1440px;margin:0 auto;padding:28px 28px 48px}.top{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;margin-bottom:18px}.brand{display:flex;gap:15px;align-items:center}.logo{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,#082552,#2563eb);box-shadow:0 16px 32px rgba(29,78,216,.25);display:grid;place-items:center;color:#fff;font-weight:900}.title h1{font-size:34px;line-height:1;margin:0;letter-spacing:-.04em}.title .sub{margin-top:7px;color:var(--muted);font-size:14px}.actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}.chip{border:1px solid var(--line);background:rgba(255,255,255,.72);backdrop-filter:blur(10px);border-radius:999px;padding:9px 13px;font-size:13px;font-weight:800;color:#334155}.btn{border:0;text-decoration:none;background:#0f2f63;color:#fff;border-radius:13px;padding:11px 14px;font-weight:900;font-size:13px;box-shadow:0 12px 24px rgba(15,47,99,.2);cursor:pointer}.btn:disabled{opacity:.55;cursor:not-allowed}.btn.secondary{background:#fff;color:#0f2f63;border:1px solid #d9e3f2;box-shadow:none}.hero{display:grid;grid-template-columns:1.4fr .9fr;gap:16px;margin-bottom:16px}.card{background:rgba(255,255,255,.86);border:1px solid rgba(226,232,240,.9);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.kpi{background:#fff;border:1px solid #e8edf5;border-radius:18px;padding:16px 16px 14px;min-height:118px}.kpi .label{font-size:12px;color:#64748b;font-weight:900;letter-spacing:.06em;text-transform:uppercase}.kpi .value{font-size:34px;font-weight:1000;letter-spacing:-.05em;margin-top:10px}.kpi .hint{font-size:12px;color:#64748b;margin-top:4px}.statusPanel{background:linear-gradient(135deg,#071c3f,#123e89 58%,#2875df);color:#fff;position:relative;overflow:hidden}.statusPanel:before{content:"PR";position:absolute;right:-14px;top:-36px;font-size:160px;font-weight:1000;opacity:.08;letter-spacing:-.1em}.sectionTag{display:inline-flex;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:1000;letter-spacing:.05em}.statusPanel h2{margin:14px 0 4px;font-size:30px;letter-spacing:-.04em}.statusPanel p{margin:0;color:rgba(255,255,255,.76);font-size:13px}.prGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.prBox{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:13px}.prBox .n{font-size:30px;font-weight:1000;line-height:1}.prBox .t{font-size:11px;opacity:.72;font-weight:900;text-transform:uppercase;margin-top:5px}.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:16px}.cardTitle{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:14px}.cardTitle h3{font-size:18px;margin:0;letter-spacing:-.02em}.cardTitle span{font-size:12px;color:#64748b}.pmccList{display:flex;flex-direction:column;gap:9px}.pmccRow{display:grid;grid-template-columns:92px 1fr 120px 74px;gap:12px;align-items:center;padding:11px 10px;border-radius:15px;border:1px solid #eef2f7;background:#fff}.pmccId{font-weight:1000;color:#0f2f63}.desc{font-size:13px;color:#334155;line-height:1.2}.barWrap{height:13px;background:#edf2f7;border-radius:999px;overflow:hidden;display:flex;box-shadow:inset 0 0 0 1px rgba(0,0,0,.02)}.seg{height:100%}.rem{background:linear-gradient(90deg,#2563eb,#60a5fa)}.req{background:#f59e0b}.closed{background:#16a34a}.clar{background:#ef4444}.completed{background:#9ca3af}.badge{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:1000}.badge.active{background:#eaf2ff;color:#1d4ed8}.badge.completed{background:#eef2f7;color:#64748b}.badge.planned{background:#f8fafc;color:#94a3b8;border:1px dashed #d1d5db}.discList{display:flex;flex-direction:column;gap:8px}.disc{display:grid;grid-template-columns:180px 1fr 62px;gap:10px;align-items:center}.discName{font-size:13px;color:#334155}.disc.pr{padding:8px;border-radius:14px;background:#eef5ff;border:1px solid #bfdbfe}.smallbar{height:12px;background:#edf2f7;border-radius:999px;overflow:hidden}.smallbar span{display:block;height:100%;background:linear-gradient(90deg,#193a8a,#3b82f6);border-radius:999px}.tableCard{margin-top:16px;overflow:auto}.summary{width:100%;border-collapse:separate;border-spacing:0;font-size:13px}.summary th{text-align:right;color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.04em;padding:10px 10px;border-bottom:1px solid var(--line);white-space:nowrap}.summary td{text-align:right;padding:11px 10px;border-bottom:1px solid #eef2f7;white-space:nowrap}.summary th:first-child,.summary td:first-child,.summary th:nth-child(2),.summary td:nth-child(2){text-align:left}.source{display:flex;gap:12px;align-items:center;justify-content:space-between;background:#fff;border:1px solid #e8edf5;border-radius:18px;padding:15px;margin-top:16px}.source b{font-size:13px}.source small{display:block;color:#64748b;margin-top:3px}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px}.notice{font-size:12px;color:#64748b;background:rgba(255,255,255,.74);border:1px solid var(--line);border-radius:999px;padding:9px 12px}.fileInput{display:none}.footer{color:#94a3b8;font-size:11px;text-align:right;margin-top:14px}@media(max-width:1050px){.hero,.layout{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.top{grid-template-columns:1fr}.actions{justify-content:flex-start}}@media(max-width:640px){.page{padding:18px 12px}.title h1{font-size:26px}.kpis,.prGrid{grid-template-columns:1fr}.pmccRow{grid-template-columns:78px 1fr}.pmccRow .barWrap,.pmccRow .badge{grid-column:1 / -1}.disc{grid-template-columns:130px 1fr 54px}.source{display:block}.source .btn{display:inline-block;margin-top:10px}}
+:root{--bg:#f4f7fb;--card:#fff;--ink:#0b1736;--muted:#667085;--line:#e5eaf2;--navy:#082552;--blue:#1d4ed8;--blue2:#60a5fa;--green:#16a34a;--amber:#f59e0b;--red:#ef4444;--gray:#94a3b8;--shadow:0 18px 48px rgba(8,37,82,.12);--r:22px}*{box-sizing:border-box}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif;color:var(--ink);background:radial-gradient(circle at 0 0,#dcecff 0,#f4f7fb 38%,#f8fafc 100%)}.page{max-width:1440px;margin:auto;padding:28px 28px 44px}.top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;margin-bottom:18px}.brand{display:flex;gap:14px;align-items:center}.logo{width:50px;height:50px;border-radius:16px;background:linear-gradient(135deg,#082552,#2563eb);display:grid;place-items:center;color:#fff;font-weight:1000;box-shadow:0 15px 32px rgba(29,78,216,.26)}h1{margin:0;font-size:34px;line-height:1;letter-spacing:-.045em}.sub{margin-top:7px;color:var(--muted);font-size:14px}.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;align-items:center}.chip{border:1px solid var(--line);background:rgba(255,255,255,.74);border-radius:999px;padding:9px 13px;font-size:13px;font-weight:900;color:#334155}.btn{border:0;text-decoration:none;background:#0f2f63;color:#fff;border-radius:13px;padding:11px 14px;font-weight:1000;font-size:13px;box-shadow:0 12px 24px rgba(15,47,99,.2);cursor:pointer}.btn.secondary{background:#fff;color:#0f2f63;border:1px solid #d9e3f2;box-shadow:none}.btn:disabled{opacity:.45;cursor:not-allowed}.file{display:none}.notice{margin-bottom:16px;font-size:12px;color:#64748b;background:rgba(255,255,255,.82);border:1px solid var(--line);border-radius:999px;padding:10px 14px;display:inline-flex}.hero{display:grid;grid-template-columns:1.35fr .9fr;gap:16px}.card{background:rgba(255,255,255,.88);border:1px solid rgba(226,232,240,.95);border-radius:var(--r);box-shadow:var(--shadow);padding:20px}.cardTitle{display:flex;justify-content:space-between;gap:12px;align-items:baseline;margin-bottom:14px}.cardTitle h3{margin:0;font-size:18px;letter-spacing:-.02em}.cardTitle span{font-size:12px;color:#64748b}.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.kpi{background:#fff;border:1px solid #e8edf5;border-radius:18px;padding:16px;min-height:118px}.kpi .label{font-size:12px;color:#64748b;font-weight:1000;letter-spacing:.06em;text-transform:uppercase}.kpi .value{font-size:34px;font-weight:1000;letter-spacing:-.055em;margin-top:10px}.kpi .hint{font-size:12px;color:#64748b;margin-top:4px}.prPanel{position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg,#071c3f,#123e89 58%,#2875df)}.prPanel:after{content:"PR";position:absolute;right:-16px;top:-42px;font-size:170px;font-weight:1000;opacity:.08;letter-spacing:-.12em}.tag{position:relative;z-index:1;display:inline-flex;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:1000;letter-spacing:.05em}.prPanel h2{position:relative;z-index:1;margin:14px 0 4px;font-size:30px;letter-spacing:-.04em}.prPanel p{position:relative;z-index:1;margin:0;color:rgba(255,255,255,.76);font-size:13px}.prGrid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:18px}.prBox{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:13px}.prBox .n{font-size:30px;font-weight:1000;line-height:1}.prBox .t{font-size:11px;opacity:.74;font-weight:1000;text-transform:uppercase;margin-top:5px}.layout{display:grid;grid-template-columns:1.12fr .88fr;gap:16px;margin-top:16px}.pmccList{display:flex;flex-direction:column;gap:9px}.pmccRow{display:grid;grid-template-columns:92px 1fr 120px 84px;gap:12px;align-items:center;padding:11px 10px;border-radius:15px;border:1px solid #eef2f7;background:#fff}.pmccId{font-weight:1000;color:#0f2f63}.desc{font-size:13px;color:#334155;line-height:1.2}.bar{height:13px;background:#edf2f7;border-radius:999px;overflow:hidden;display:flex}.seg{height:100%}.rem{background:linear-gradient(90deg,#2563eb,#60a5fa)}.req{background:#f59e0b}.closed{background:#16a34a}.clar{background:#ef4444}.completedSeg{background:#9ca3af;width:100%}.badge{display:inline-flex;justify-content:center;border-radius:999px;padding:5px 8px;font-size:11px;font-weight:1000}.badge.active{background:#eaf2ff;color:#1d4ed8}.badge.completed{background:#eef2f7;color:#64748b}.badge.planned{background:#f8fafc;color:#94a3b8;border:1px dashed #d1d5db}.discList{display:flex;flex-direction:column;gap:8px}.disc{display:grid;grid-template-columns:185px 1fr 68px;gap:10px;align-items:center}.discName{font-size:13px;color:#334155}.disc.pr{padding:8px;border-radius:14px;background:#eef5ff;border:1px solid #bfdbfe}.smallbar{height:12px;background:#edf2f7;border-radius:999px;overflow:hidden}.smallbar span{display:block;height:100%;background:linear-gradient(90deg,#193a8a,#3b82f6);border-radius:999px}.tableCard{margin-top:16px;overflow:auto}.summary{width:100%;border-collapse:separate;border-spacing:0;font-size:13px}.summary th{text-align:right;color:#64748b;font-size:11px;text-transform:uppercase;letter-spacing:.04em;padding:10px;border-bottom:1px solid var(--line);white-space:nowrap}.summary td{text-align:right;padding:11px 10px;border-bottom:1px solid #eef2f7;white-space:nowrap}.summary th:first-child,.summary td:first-child,.summary th:nth-child(2),.summary td:nth-child(2){text-align:left}.source{display:flex;justify-content:space-between;gap:14px;align-items:center;background:#fff;border:1px solid #e8edf5;border-radius:18px;padding:15px;margin-top:16px}.source b{font-size:13px}.source small{display:block;color:#64748b;margin-top:3px;word-break:break-all}.footer{color:#94a3b8;font-size:11px;text-align:right;margin-top:14px}@media(max-width:1050px){.top{display:block}.actions{justify-content:flex-start;margin-top:14px}.hero,.layout{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.page{padding:18px 12px}h1{font-size:26px}.kpis,.prGrid{grid-template-columns:1fr}.pmccRow{grid-template-columns:78px 1fr}.pmccRow .bar,.pmccRow .badge{grid-column:1/-1}.disc{grid-template-columns:130px 1fr 54px}.source{display:block}.source .btn{margin-top:10px}}
 </style>
 </head>
 <body>
 <div class="page">
   <header class="top">
-    <div class="brand"><div class="logo">GS</div><div class="title"><h1>Yanbu SRU PMCC Punch Dashboard</h1><div class="sub">GitHub Pages / Notion embed ready</div></div></div>
-    <div class="actions"><span class="chip" id="asOfChip">As of -</span><span class="chip" id="updatedChip">Updated -</span><button class="btn" id="loadRepoExcel" type="button">Load pmcc_source.xlsx</button><label class="btn secondary">Upload Excel<input id="uploadExcel" class="fileInput" type="file" accept=".xlsx,.xlsm,.xls"></label><a class="btn secondary" id="downloadSource" download>Download Source Excel</a></div>
+    <div class="brand"><div class="logo">GS</div><div><h1>Yanbu SRU PMCC Punch Dashboard</h1><div class="sub">GitHub Pages / Notion embed ready · data 폴더의 최신 Excel 자동 로드</div></div></div>
+    <div class="actions"><span class="chip" id="asOfChip">As of -</span><span class="chip" id="updatedChip">Updated -</span><button class="btn" id="reloadBtn" type="button">Reload Source Excel</button><label class="btn secondary">Preview Local Excel<input id="uploadExcel" class="file" type="file" accept=".xlsx,.xlsm,.xls"></label><button class="btn secondary" id="downloadBtn" type="button">Download Source Excel</button></div>
   </header>
-  <div class="toolbar"><span class="notice" id="loadStatus">Loading dashboard data...</span></div>
+  <div class="notice" id="loadStatus">Loading latest Excel from GitHub data folder...</div>
   <section class="hero">
-    <div class="card"><div class="cardTitle"><h3>Overall Status</h3><span>Overall Status · Sub Total 기준</span></div><div class="kpis" id="kpis"></div></div>
-    <div class="card statusPanel"><span class="sectionTag">MY SCOPE · PROCESS ENGINEERING</span><h2>Process Engineering Status</h2><p>Engineering / PR 항목을 상단 우선 표시합니다.</p><div class="prGrid" id="prGrid"></div></div>
+    <div class="card"><div class="cardTitle"><h3>Overall Status</h3><span>OVERALL · Sub Total 기준</span></div><div class="kpis" id="kpis"></div></div>
+    <div class="card prPanel"><span class="tag">MY SCOPE · PROCESS ENGINEERING</span><h2>Process Engineering Status</h2><p>Engineering / PR 항목을 상단 우선 표시합니다.</p><div class="prGrid" id="prGrid"></div></div>
   </section>
   <section class="layout">
-    <div class="card"><div class="cardTitle"><h3>PMCC Progress</h3><span>PMCC-01/02 Completed 고정 · 신규 PMCC 자동 확장</span></div><div class="pmccList" id="pmccList"></div></div>
-    <div class="card"><div class="cardTitle"><h3>Discipline Open Punch</h3><span>PR 우선 · Overall Sub Total</span></div><div class="discList" id="discList"></div></div>
+    <div class="card"><div class="cardTitle"><h3>PMCC Progress</h3><span>PMCC-01/02 Completed 고정 · PMCC-01~14 표시</span></div><div class="pmccList" id="pmccList"></div></div>
+    <div class="card"><div class="cardTitle"><h3>Discipline Open Punch</h3><span>PR 우선 · OVERALL Sub Total</span></div><div class="discList" id="discList"></div></div>
   </section>
   <section class="card tableCard"><div class="cardTitle"><h3>Summary Table</h3><span>단위: 건</span></div><table class="summary" id="summaryTable"></table></section>
-  <section class="source"><div><b id="sourceName">Source Excel</b><small>원본 Excel은 위 Download Source Excel 버튼으로 받을 수 있습니다.</small></div><button class="btn secondary" id="sourceInline" type="button">Load Source Excel</button></section>
+  <section class="source"><div><b id="sourceName">Source Excel</b><small id="sourcePath">data 폴더의 최신 .xlsx 파일을 자동으로 읽습니다.</small></div><button class="btn secondary" id="downloadBtn2" type="button">Download Source Excel</button></section>
   <div class="footer">Generated for Yanbu SRU PMCC Punch Dashboard</div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <script>
 const PMCC_MASTER=[
-{id:'PMCC-01',description:'TRS Tie-in',forcedCompleted:true},{id:'PMCC-02',description:'Siren Tower Relocation',forcedCompleted:true},{id:'PMCC-03',description:'SS-5'},{id:'PMCC-04',description:'SS-18'},{id:'PMCC-05',description:'PIB-1580'},{id:'PMCC-06',description:'PIB-1449'},{id:'PMCC-07',description:'Utility area for Instrument Air System'},{id:'PMCC-08',description:'Common Area OSBL'},{id:'PMCC-09',description:'SRU-2'},{id:'PMCC-10',description:'TGTU-2 & Common'},{id:'PMCC-11',description:'SRU-1'},{id:'PMCC-12',description:'TGTU-1'},{id:'PMCC-13',description:'Sour/Stripped Water Pump B Modification - V07'},{id:'PMCC-14',description:'Sour/Stripped Water Pump A Modification - V07'}
-];
+{id:'PMCC-01',description:'TRS Tie-in',forcedCompleted:true},{id:'PMCC-02',description:'Siren Tower Relocation',forcedCompleted:true},{id:'PMCC-03',description:'SS-5'},{id:'PMCC-04',description:'SS-18'},{id:'PMCC-05',description:'PIB-1580'},{id:'PMCC-06',description:'PIB-1449'},{id:'PMCC-07',description:'Utility area for Instrument Air System'},{id:'PMCC-08',description:'Common Area OSBL'},{id:'PMCC-09',description:'SRU-2'},{id:'PMCC-10',description:'TGTU-2 & Common'},{id:'PMCC-11',description:'SRU-1'},{id:'PMCC-12',description:'TGTU-1'},{id:'PMCC-13',description:'Sour/Stripped Water Pump B Modification - V07'},{id:'PMCC-14',description:'Sour/Stripped Water Pump A Modification - V07'}];
 const DISC_MAP=[['Engineering / PR','process'],['Construction / Civil','conCivil'],['Construction / SMP','conSmp'],['Construction / Piping','conPiping'],['Construction / Electrical','conElectrical'],['Construction / Instrument','conInstrument'],['Construction / CIF','conCif'],['Engineering / Civil','engCivil'],['Engineering / Stationary Eq.','engStationary'],['Engineering / Piping','engPiping'],['Engineering / Electrical','engElectrical'],['Engineering / Instrument','engInstrument'],['Engineering / Fire Protection','engFire'],['Pre-Comm.','preComm'],['QC','qc'],['Safety','safety']];
-const fmt=n=>Number(n||0).toLocaleString('en-US');
-const pct=(a,b)=>b?Math.max(0,Math.min(100,Number(a||0)/Number(b||0)*100)):0;
-const pctText=(a,b)=>b?(Number(a||0)/Number(b||0)*100).toFixed(1)+'%':'-';
-const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-const num=v=>{ if(v==null||v==='')return 0; if(typeof v==='string')v=v.replace(/,/g,'').trim(); const n=Number(v); return Number.isFinite(n)?Math.round(n):0; };
-function setStatus(msg,err=false){const el=document.getElementById('loadStatus'); if(!el)return; el.textContent=msg; el.style.color=err?'#b91c1c':'#64748b'; el.style.borderColor=err?'#fecaca':'var(--line)'; el.style.background=err?'#fff1f2':'rgba(255,255,255,.74)';}
-function kpi(label,value,hint,cls=''){return `<div class="kpi ${cls}"><div class="label">${esc(label)}</div><div class="value">${esc(value)}</div><div class="hint">${esc(hint)}</div></div>`}
-function segs(x){
-  if(x.status==='Completed' && x.forcedCompleted) return `<span class="seg completed" style="width:100%"></span>`;
-  const total=x.total||0; if(!total) return '';
-  return `<span class="seg rem" style="width:${pct(x.remaining,total)}%"></span><span class="seg req" style="width:${pct(x.closeRequested,total)}%"></span><span class="seg closed" style="width:${pct(x.closed,total)}%"></span><span class="seg clar" style="width:${pct(x.underClarification,total)}%"></span>`;
-}
+const fmt=n=>Number(n||0).toLocaleString('en-US'), num=v=>{if(v==null||v==='')return 0; if(typeof v==='string')v=v.replace(/,/g,'').trim(); const x=Number(v); return Number.isFinite(x)?Math.round(x):0}, pct=(a,b)=>b?Math.max(0,Math.min(100,Number(a||0)/Number(b||0)*100)):0, fpct=v=>Number(v||0).toFixed(1)+'%', esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+let currentSourceUrl=null, currentSourceName=null;
+function setStatus(msg,err=false){const el=document.getElementById('loadStatus');el.textContent=msg;el.style.color=err?'#b42318':'#475467';el.style.borderColor=err?'#ffd6d6':'#e5eaf2';el.style.background=err?'#fff5f5':'rgba(255,255,255,.82)'}
+function kpi(label,value,hint){return `<div class="kpi"><div class="label">${esc(label)}</div><div class="value">${esc(value)}</div><div class="hint">${esc(hint)}</div></div>`}
 function render(data){
-  document.title=data.projectTitle||'Yanbu SRU PMCC Punch Dashboard';
+  const s=data.summary||{}, total=s.total||0, complete=pct(s.closed,total);
   document.getElementById('asOfChip').textContent='As of '+(data.asOf||'-');
   document.getElementById('updatedChip').textContent='Updated '+(data.lastUpdated||'-');
-  document.getElementById('downloadSource').href=data.sourceFileUrl||'data/pmcc_source.xlsx';
-  document.getElementById('downloadSource').setAttribute('download', data.sourceFileName || 'pmcc_source.xlsx');
   document.getElementById('sourceName').textContent=data.sourceFileName||'Source Excel';
-  const s=data.summary||{}; const completion=pctText((s.closed||0)+(s.closeRequested||0),s.total||0);
-  document.getElementById('kpis').innerHTML=[
-    kpi('Total Punch',fmt(s.total),'전체 Punch 합계'),
-    kpi('Remaining',fmt(s.remaining),pctText(s.remaining,s.total)+' of total'),
-    kpi('Close Requested',fmt(s.closeRequested),pctText(s.closeRequested,s.total)+' of total'),
-    kpi('Closed',fmt(s.closed),pctText(s.closed,s.total)+' of total'),
-    kpi('Action Progress',completion,'Closed + Close Requested')
-  ].join('');
-  const pr=data.process||{}; document.getElementById('prGrid').innerHTML=[['Open',pr.open],['Close Requested',pr.closeRequested],['Closed',pr.closed],['Total PR',pr.total]].map(x=>`<div class="prBox"><div class="n">${fmt(x[1])}</div><div class="t">${esc(x[0])}</div></div>`).join('');
-  document.getElementById('pmccList').innerHTML=(data.pmcc||[]).map(x=>`<div class="pmccRow"><div class="pmccId">${esc(x.id)}</div><div class="desc"><b>${esc(x.description)}</b><br><span style="color:#64748b">Total ${fmt(x.total)} · Remaining ${fmt(x.remaining)}</span></div><div class="barWrap">${segs(x)}</div><span class="badge ${String(x.status).toLowerCase()}">${esc(x.status)}</span></div>`).join('');
-  const max=Math.max(1,...(data.disciplines||[]).map(d=>d.value||0));
+  document.getElementById('sourcePath').textContent=data.sourceFileUrl||'';
+  document.getElementById('kpis').innerHTML=[kpi('Total Punch',fmt(total),'OVERALL Sub Total'),kpi('Remaining',fmt(s.remaining),fpct(pct(s.remaining,total))+' of total'),kpi('Close Requested',fmt(s.closeRequested),fpct(pct(s.closeRequested,total))+' of total'),kpi('Closed',fmt(s.closed),fpct(complete)+' completion'),kpi('Under Clarification',fmt(s.underClarification),fpct(pct(s.underClarification,total))+' of total')].join('');
+  const p=data.process||{};
+  document.getElementById('prGrid').innerHTML=[['Open',p.open||0],['Close Requested',p.closeRequested||0],['Closed',p.closed||0],['Total PR',p.total||0]].map(x=>`<div class="prBox"><div class="n">${fmt(x[1])}</div><div class="t">${esc(x[0])}</div></div>`).join('');
+  document.getElementById('pmccList').innerHTML=(data.pmcc||[]).map(x=>{const t=x.total||0, done=x.status==='Completed';return `<div class="pmccRow"><div class="pmccId">${esc(x.id)}</div><div><div class="desc">${esc(x.description)}</div><div style="font-size:11px;color:#94a3b8;margin-top:3px">Total ${fmt(t)} · Rem ${fmt(x.remaining)} · Req ${fmt(x.closeRequested)} · Closed ${fmt(x.closed)}</div></div><div class="bar">${done?'<span class="completedSeg"></span>':`<span class="seg rem" style="width:${pct(x.remaining,t)}%"></span><span class="seg req" style="width:${pct(x.closeRequested,t)}%"></span><span class="seg closed" style="width:${pct(x.closed,t)}%"></span><span class="seg clar" style="width:${pct(x.underClarification,t)}%"></span>`}</div><span class="badge ${done?'completed':(t>0?'active':'planned')}">${esc(x.status)}</span></div>`}).join('');
+  const max=Math.max(...(data.disciplines||[]).map(d=>d.value||0),1);
   document.getElementById('discList').innerHTML=(data.disciplines||[]).map(d=>`<div class="disc ${d.priority?'pr':''}"><div class="discName">${d.priority?'⭐ ':''}${esc(d.name)}</div><div class="smallbar"><span style="width:${pct(d.value,max)}%"></span></div><b style="text-align:right">${fmt(d.value)}</b></div>`).join('');
   document.getElementById('summaryTable').innerHTML='<thead><tr><th>PMCC</th><th>Description</th><th>Status</th><th>Total</th><th>Remaining</th><th>Close Req.</th><th>Closed</th><th>Clarif.</th><th>PR</th></tr></thead><tbody>'+(data.pmcc||[]).map(x=>`<tr><td><b>${esc(x.id)}</b></td><td>${esc(x.description)}</td><td>${esc(x.status)}</td><td>${fmt(x.total)}</td><td>${fmt(x.remaining)}</td><td>${fmt(x.closeRequested)}</td><td>${fmt(x.closed)}</td><td>${fmt(x.underClarification)}</td><td><b>${fmt(x.process)}</b></td></tr>`).join('')+'</tbody>';
-  window.__PMCC_DATA=data;
 }
-function rowToRecord(row){
-  return {total:num(row[2]),underClarification:num(row[3]),remaining:num(row[4]),conCivil:num(row[5]),conSmp:num(row[6]),conPiping:num(row[7]),conElectrical:num(row[8]),conInstrument:num(row[9]),conCif:num(row[10]),process:num(row[11]),engCivil:num(row[12]),engStationary:num(row[13]),engPiping:num(row[14]),engElectrical:num(row[15]),engInstrument:num(row[16]),engFire:num(row[17]),preComm:num(row[18]),qc:num(row[19]),safety:num(row[20]),closeRequested:num(row[21]),closed:num(row[22])};
-}
-function findOverallRows(wb){
-  const name=wb.SheetNames.find(n=>/^overall status$/i.test(n.trim()))||wb.SheetNames.find(n=>/overall/i.test(n)&&/status/i.test(n));
-  if(!name) throw new Error('Overall Status sheet not found');
-  return XLSX.utils.sheet_to_json(wb.Sheets[name],{header:1,defval:''});
-}
-function parseOverall(wb, sourceFileName){
-  const rows=findOverallRows(wb);
-  const dataByPmcc={}; let current=null;
-  for(let i=0;i<rows.length;i++){
-    const text=rows[i].map(v=>String(v||'')).join(' ');
-    const m=text.match(/PMCC[-\s]?\d{1,2}/i);
-    if(m) current=m[0].toUpperCase().replace(/\s+/g,'').replace('PMCC','PMCC-').replace('--','-');
-    if(/sub\s*total/i.test(text) && current){ dataByPmcc[current]=rowToRecord(rows[i]); }
-    if(/overall/i.test(text) && /sub\s*total/i.test(text)){ dataByPmcc.OVERALL=rowToRecord(rows[i]); }
+function recordFromRow(row){return {total:num(row[2]),underClarification:num(row[3]),remaining:num(row[4]),conCivil:num(row[5]),conSmp:num(row[6]),conPiping:num(row[7]),conElectrical:num(row[8]),conInstrument:num(row[9]),conCif:num(row[10]),process:num(row[11]),engCivil:num(row[12]),engStationary:num(row[13]),engPiping:num(row[14]),engElectrical:num(row[15]),engInstrument:num(row[16]),engFire:num(row[17]),preComm:num(row[18]),qc:num(row[19]),safety:num(row[20]),closeRequested:num(row[21]),closed:num(row[22])};}
+function normId(v){const m=String(v||'').match(/PMCC[-\s]?(\d{1,2})/i); return m?'PMCC-'+m[1].padStart(2,'0'):null}
+function findOverallRows(wb){const name=wb.SheetNames.find(n=>/^overall status$/i.test(n.trim()))||wb.SheetNames.find(n=>/overall/i.test(n)&&/status/i.test(n)); if(!name)throw new Error('Overall Status sheet not found'); return XLSX.utils.sheet_to_json(wb.Sheets[name],{header:1,defval:'',raw:true});}
+function parseOverall(wb, sourceFileName, sourceUrl){
+  const rows=findOverallRows(wb), dataByPmcc={}; let current=null;
+  for(const row of rows){
+    const colA=String(row[0]||'').trim(), colB=String(row[1]||'').trim();
+    const id=normId(colA); if(id) current=id; else if(/^OVERALL$/i.test(colA)) current='OVERALL';
+    if(/^sub\s*total$/i.test(colB) && current){ dataByPmcc[current]=recordFromRow(row); }
   }
-  let pmcc=PMCC_MASTER.map(m=>{
-    const rec=dataByPmcc[m.id]||{}; const total=rec.total||0;
-    const status=m.forcedCompleted?'Completed':(total>0?'Active':'Planned');
-    return {...m,status,total: m.forcedCompleted?0:total,remaining:rec.remaining||0,closeRequested:rec.closeRequested||0,closed:rec.closed||0,underClarification:rec.underClarification||0,process:rec.process||0,...rec};
-  });
-  const summary=dataByPmcc.OVERALL || pmcc.reduce((a,x)=>{['total','remaining','closeRequested','closed','underClarification'].forEach(k=>a[k]=(a[k]||0)+(x[k]||0)); return a;},{});
-  const overallDisc=dataByPmcc.OVERALL || pmcc.reduce((a,x)=>{DISC_MAP.forEach(([_,k])=>a[k]=(a[k]||0)+(x[k]||0)); return a;},{});
+  const pmcc=PMCC_MASTER.map(m=>{const rec=dataByPmcc[m.id]||{}; const has=(rec.total||0)>0; const status=m.forcedCompleted?'Completed':(has?'Active':'Planned'); return {...m,...rec,status,total:m.forcedCompleted?0:(rec.total||0),remaining:m.forcedCompleted?0:(rec.remaining||0),closeRequested:m.forcedCompleted?0:(rec.closeRequested||0),closed:m.forcedCompleted?0:(rec.closed||0),underClarification:m.forcedCompleted?0:(rec.underClarification||0),process:m.forcedCompleted?0:(rec.process||0)}});
+  if(!dataByPmcc.OVERALL) throw new Error('OVERALL Sub Total row not found. KPI 계산을 중단했습니다.');
+  const summary=dataByPmcc.OVERALL;
   const prDetail=parseProcessDetail(wb, pmcc);
-  const process=prDetail.total?prDetail:{total:overallDisc.process||0,open:overallDisc.process||0,closeRequested:0,closed:0};
-  const disciplines=DISC_MAP.map(([name,key],idx)=>({name,value:overallDisc[key]||0,priority:idx===0}));
-  return {projectTitle:'Yanbu SRU PMCC Punch Dashboard',asOf:guessAsOf(rows, sourceFileName),lastUpdated:new Date().toLocaleString('ko-KR'),sourceFileName:sourceFileName||'pmcc_source.xlsx',sourceFileUrl:'data/pmcc_source.xlsx',summary,process,pmcc,disciplines};
+  const process=prDetail.total?prDetail:{total:summary.process||0,open:summary.process||0,closeRequested:0,closed:0};
+  const disciplines=DISC_MAP.map(([name,key],idx)=>({name,value:summary[key]||0,priority:idx===0}));
+  return {asOf:guessAsOf(rows, sourceFileName),lastUpdated:new Date().toLocaleString('ko-KR'),sourceFileName,sourceFileUrl:sourceUrl,summary,process,pmcc,disciplines};
 }
-function guessAsOf(rows, fn){
-  const m=String(fn||'').match(/(20\d{6})/); if(m) return `${m[1].slice(0,4)}-${m[1].slice(4,6)}-${m[1].slice(6)}`;
-  for(const r of rows.slice(0,8)){ for(const v of r){ if(v instanceof Date) return v.toISOString().slice(0,10); if(typeof v==='number'&&v>40000&&v<60000){const d=XLSX.SSF.parse_date_code(v); if(d) return `${d.y}-${String(d.m).padStart(2,'0')}-${String(d.d).padStart(2,'0')}`;} } }
-  return new Date().toISOString().slice(0,10);
-}
-function parseProcessDetail(wb, pmcc){
-  const out={total:0,open:0,closeRequested:0,closed:0};
-  for(const p of pmcc){
-    const sn=wb.SheetNames.find(n=>n.toUpperCase().replace(/\s+/g,'')===p.id);
-    if(!sn) continue;
-    const rows=XLSX.utils.sheet_to_json(wb.Sheets[sn],{header:1,defval:''});
-    const headerIdx=rows.findIndex(r=>r.some(c=>/^category$/i.test(String(c).trim()))&&r.some(c=>/^status$/i.test(String(c).trim())));
-    if(headerIdx<0) continue;
-    const h=rows[headerIdx].map(c=>String(c).trim().toLowerCase()); const catI=h.indexOf('category'), stI=h.indexOf('status');
-    for(let i=headerIdx+1;i<rows.length;i++){
-      const cat=String(rows[i][catI]||'').trim().toLowerCase(); if(!(cat==='process'||cat==='pr')) continue;
-      out.total++; const st=String(rows[i][stI]||'').trim().toLowerCase();
-      if(st.includes('close')&&st.includes('request')) out.closeRequested++; else if(st==='closed') out.closed++; else out.open++;
-    }
-  }
-  return out;
-}
-async function loadRepoExcel(){
-  if(!window.XLSX){setStatus('XLSX parser CDN load failed. Check network policy.',true); return;}
-  try{setStatus('Loading data/pmcc_source.xlsx ...'); const res=await fetch('data/pmcc_source.xlsx?ts='+Date.now()); if(!res.ok)throw new Error('pmcc_source.xlsx fetch failed'); const buf=await res.arrayBuffer(); const wb=XLSX.read(buf,{type:'array',cellDates:true}); const data=parseOverall(wb,'pmcc_source.xlsx'); render(data); setStatus('Loaded from pmcc_source.xlsx');}
-  catch(e){setStatus('Excel load failed: '+(e.message||e),true);}
-}
-async function loadLocalExcel(file){
-  if(!file||!window.XLSX)return;
-  try{setStatus('Loading '+file.name+' ...'); const wb=XLSX.read(await file.arrayBuffer(),{type:'array',cellDates:true}); const data=parseOverall(wb,file.name); render(data); setStatus('Loaded from uploaded Excel: '+file.name);}
-  catch(e){setStatus('Uploaded Excel load failed: '+(e.message||e),true);}
-}
-async function loadJsonFallback(){
-  try{const r=await fetch('data/status.json?ts='+Date.now()); if(!r.ok)throw new Error('status.json load failed'); const data=await r.json(); render(data); setStatus('Loaded status.json. Click Load pmcc_source.xlsx to refresh from Excel.');}
-  catch(e){setStatus('Dashboard data load failed: '+(e.message||e),true);}
-}
-document.getElementById('loadRepoExcel').addEventListener('click',loadRepoExcel);
-document.getElementById('sourceInline').addEventListener('click',loadRepoExcel);
-document.getElementById('uploadExcel').addEventListener('change',e=>loadLocalExcel(e.target.files[0]));
-document.getElementById('downloadSource').href='data/pmcc_source.xlsx';
-document.getElementById('downloadSource').setAttribute('download','pmcc_source.xlsx');
-loadRepoExcel().catch(loadJsonFallback);
+function parseProcessDetail(wb, pmcc){const out={total:0,open:0,closeRequested:0,closed:0}; for(const p of pmcc){const sn=wb.SheetNames.find(n=>n.toUpperCase().replace(/\s+/g,'')===p.id); if(!sn)continue; const rows=XLSX.utils.sheet_to_json(wb.Sheets[sn],{header:1,defval:''}); const hi=rows.findIndex(r=>r.some(c=>/^category$/i.test(String(c).trim()))&&r.some(c=>/^status$/i.test(String(c).trim()))); if(hi<0)continue; const h=rows[hi].map(c=>String(c).trim().toLowerCase()); const ci=h.indexOf('category'), si=h.indexOf('status'); for(let i=hi+1;i<rows.length;i++){const cat=String(rows[i][ci]||'').trim().toLowerCase(); if(!(cat==='process'||cat==='pr'))continue; out.total++; const st=String(rows[i][si]||'').trim().toLowerCase(); if(st.includes('close')&&st.includes('request'))out.closeRequested++; else if(st==='closed')out.closed++; else out.open++;}} return out;}
+function guessAsOf(rows, fn){const m=String(fn||'').match(/(20\d{6})/); if(m)return `${m[1].slice(0,4)}-${m[1].slice(4,6)}-${m[1].slice(6)}`; for(const r of rows.slice(0,10)){for(const v of r){if(v instanceof Date)return v.toISOString().slice(0,10); if(typeof v==='number'&&v>40000&&v<60000){const d=XLSX.SSF.parse_date_code(v); if(d)return `${d.y}-${String(d.m).padStart(2,'0')}-${String(d.d).padStart(2,'0')}`}}} return '-'}
+function repoInfo(){const host=location.hostname; if(host.endsWith('.github.io')){const owner=host.split('.')[0]; const repo=location.pathname.split('/').filter(Boolean)[0]; if(owner&&repo)return {owner,repo};} return {owner:'ykk977',repo:'pmcc-punch-dashboard'};}
+function dateScore(name){const m=String(name).match(/(20\d{6})/); return m?Number(m[1]):0;}
+async function listSourceExcels(){const {owner,repo}=repoInfo(); const api=`https://api.github.com/repos/${owner}/${repo}/contents/data?ref=main`; const res=await fetch(api,{cache:'no-store'}); if(!res.ok)throw new Error('GitHub data folder list failed: '+res.status); const files=await res.json(); return files.filter(f=>f.type==='file'&&/\.xls(x|m)?$/i.test(f.name)&&!/^~\$/.test(f.name)).sort((a,b)=>(dateScore(b.name)-dateScore(a.name))||b.name.localeCompare(a.name));}
+async function loadLatestSource(){if(!window.XLSX)throw new Error('XLSX parser CDN load failed'); setStatus('Searching latest .xlsx in data folder ...'); const files=await listSourceExcels(); if(!files.length)throw new Error('data folder에 .xlsx 파일이 없습니다.'); const f=files[0]; setStatus('Loading '+f.name+' ...'); const res=await fetch(f.download_url+'?ts='+Date.now(),{cache:'no-store'}); if(!res.ok)throw new Error('Excel download failed: '+res.status); const buf=await res.arrayBuffer(); currentSourceUrl=f.download_url; currentSourceName=f.name; const wb=XLSX.read(buf,{type:'array',cellDates:true}); const data=parseOverall(wb,f.name,f.download_url); render(data); setStatus(`Loaded ${f.name} · Total ${fmt(data.summary.total)} · ${files.length} Excel file(s) found in data folder`);}
+async function previewLocal(file){if(!file)return; try{setStatus('Previewing '+file.name+' ...'); const buf=await file.arrayBuffer(); currentSourceUrl=URL.createObjectURL(new Blob([buf])); currentSourceName=file.name; const wb=XLSX.read(buf,{type:'array',cellDates:true}); const data=parseOverall(wb,file.name,'Local preview only - GitHub에는 저장되지 않음'); render(data); setStatus('Local preview loaded: '+file.name+' · GitHub 반영은 data 폴더에 파일을 수동 업로드하세요.');}catch(e){setStatus('Local preview failed: '+(e.message||e),true);}}
+function downloadSource(){if(!currentSourceUrl){alert('Source Excel이 아직 로드되지 않았습니다.'); return;} const a=document.createElement('a'); a.href=currentSourceUrl; a.download=currentSourceName||'PMCC_Source.xlsx'; document.body.appendChild(a); a.click(); a.remove();}
+document.getElementById('reloadBtn').onclick=()=>loadLatestSource().catch(e=>setStatus('Load failed: '+(e.message||e),true));
+document.getElementById('uploadExcel').onchange=e=>previewLocal(e.target.files[0]);
+document.getElementById('downloadBtn').onclick=downloadSource; document.getElementById('downloadBtn2').onclick=downloadSource;
+loadLatestSource().catch(e=>setStatus('Load failed: '+(e.message||e),true));
 </script>
 </body>
 </html>
