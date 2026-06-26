@@ -16,3 +16,8 @@
 - 원본 Excel은 GitHub에 업로드하지 않음
 - GitHub에는 집계 JSON만 업로드
 - Tag, Punch 상세, Comment 등 민감한 세부내용은 포함하지 않음
+
+
+## v11 변경
+- Last Updated 중복 표시 제거: 상단 우측 배지만 유지
+- Dashboard 본문에는 Source File만 표시
