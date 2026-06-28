@@ -1,19 +1,20 @@
 {
-  "asOf": "2026-06-26",
-  "sourceFile": "(Consolidated) PMCC Punch List_20260624.xlsx",
-  "lastUpdated": "2026-06-26",
+  "sourceBasis": "Summary by GS PIC",
+  "sourceFile": "(Consolidated) PMCC Punch List_20260628.xlsx",
+  "lastUpdated": "2026-06-28",
   "kpi": {
     "total": 22317,
-    "remaining": 20218,
-    "closeRequested": 1886,
-    "closed": 18,
-    "clarification": 195
+    "remaining": 20083,
+    "closeRequested": 2051,
+    "closed": 37,
+    "clarification": 182
   },
   "process": {
-    "total": 1,
-    "open": 1,
-    "closeRequested": 0,
-    "closed": 0
+    "total": 3,
+    "open": 0,
+    "closeRequested": 3,
+    "closed": 0,
+    "clarification": 0
   },
   "pmcc": [
     {
@@ -55,9 +56,9 @@
       "status": "Active",
       "total": 2242,
       "remaining": 2233,
-      "closeRequested": 0,
+      "closeRequested": 9,
       "closed": 0,
-      "clarification": 9,
+      "clarification": 0,
       "process": 0
     },
     {
@@ -76,10 +77,10 @@
       "description": "PIB-1449",
       "status": "Active",
       "total": 369,
-      "remaining": 363,
-      "closeRequested": 0,
+      "remaining": 365,
+      "closeRequested": 3,
       "closed": 0,
-      "clarification": 6,
+      "clarification": 1,
       "process": 0
     },
     {
@@ -98,11 +99,11 @@
       "description": "Common Area OSBL",
       "status": "Active",
       "total": 1584,
-      "remaining": 1380,
-      "closeRequested": 100,
+      "remaining": 1378,
+      "closeRequested": 102,
       "closed": 0,
       "clarification": 104,
-      "process": 0
+      "process": 1
     },
     {
       "sn": "PMCC-09",
@@ -120,11 +121,11 @@
       "description": "TGTU-2 & Common",
       "status": "Active",
       "total": 18122,
-      "remaining": 16242,
-      "closeRequested": 1786,
-      "closed": 18,
-      "clarification": 76,
-      "process": 1
+      "remaining": 16107,
+      "closeRequested": 1937,
+      "closed": 37,
+      "clarification": 77,
+      "process": 2
     },
     {
       "sn": "PMCC-11",
@@ -173,68 +174,79 @@
   ],
   "discipline": [
     {
-      "name": "Engineering / PR",
-      "value": 1
-    },
-    {
-      "name": "Construction / Civil",
-      "value": 1266
-    },
-    {
-      "name": "Construction / SMP",
-      "value": 98
+      "name": "Construction / Instrument",
+      "value": 7351,
+      "isProcess": false
     },
     {
       "name": "Construction / Piping",
-      "value": 3578
-    },
-    {
-      "name": "Construction / Electrical",
-      "value": 2333
-    },
-    {
-      "name": "Construction / Instrument",
-      "value": 7282
+      "value": 3549,
+      "isProcess": false
     },
     {
       "name": "Construction / CIF",
-      "value": 3110
+      "value": 3111,
+      "isProcess": false
     },
     {
-      "name": "Engineering / Civil",
-      "value": 3
+      "name": "Construction / Electrical",
+      "value": 2109,
+      "isProcess": false
     },
     {
-      "name": "Engineering / Stationary Eq.",
-      "value": 87
-    },
-    {
-      "name": "Engineering / Piping",
-      "value": 3
+      "name": "Construction / Civil",
+      "value": 1304,
+      "isProcess": false
     },
     {
       "name": "Engineering / Electrical",
-      "value": 1034
-    },
-    {
-      "name": "Engineering / Instrument",
-      "value": 463
-    },
-    {
-      "name": "Engineering / Fire Protection",
-      "value": 71
+      "value": 1234,
+      "isProcess": false
     },
     {
       "name": "Pre-Comm.",
-      "value": 841
+      "value": 720,
+      "isProcess": false
     },
     {
-      "name": "QC",
-      "value": 2
+      "name": "Engineering / Instrument",
+      "value": 385,
+      "isProcess": false
     },
     {
-      "name": "Safety",
-      "value": 46
+      "name": "Construction / SMP",
+      "value": 120,
+      "isProcess": false
+    },
+    {
+      "name": "Engineering / Stationary Equipment",
+      "value": 87,
+      "isProcess": false
+    },
+    {
+      "name": "Engineering / Fire Protection",
+      "value": 61,
+      "isProcess": false
+    },
+    {
+      "name": "HSE / Safety",
+      "value": 44,
+      "isProcess": false
+    },
+    {
+      "name": "Engineering / Civil",
+      "value": 3,
+      "isProcess": false
+    },
+    {
+      "name": "Engineering / Piping",
+      "value": 3,
+      "isProcess": false
+    },
+    {
+      "name": "QA/QC / QC",
+      "value": 2,
+      "isProcess": false
     }
   ]
 }
