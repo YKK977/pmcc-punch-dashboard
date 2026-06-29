@@ -4,18 +4,160 @@
   "lastUpdated": "2026-06-28",
   "kpi": {
     "total": 22317,
+    "clarification": 182,
     "remaining": 20083,
     "closeRequested": 2051,
-    "closed": 37,
-    "clarification": 182
+    "closed": 37
   },
   "process": {
     "total": 3,
-    "open": 0,
+    "remaining": 0,
     "closeRequested": 3,
     "closed": 0,
     "clarification": 0
   },
+  "processPmcc": [
+    {
+      "sn": "PMCC-01",
+      "description": "TRS Tie-in",
+      "status": "Completed",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-02",
+      "description": "Siren Tower Relocation",
+      "status": "Completed",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-03",
+      "description": "SS-5",
+      "status": "Planned",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-04",
+      "description": "SS-18",
+      "status": "Active",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-05",
+      "description": "PIB-1580",
+      "status": "Planned",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-06",
+      "description": "PIB-1449",
+      "status": "Active",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-07",
+      "description": "Utility area for Instrument Air System",
+      "status": "Planned",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-08",
+      "description": "Common Area OSBL",
+      "status": "Active",
+      "total": 1,
+      "remaining": 0,
+      "closeRequested": 1,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-09",
+      "description": "SRU-2",
+      "status": "Planned",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-10",
+      "description": "TGTU-2 & Common",
+      "status": "Active",
+      "total": 2,
+      "remaining": 0,
+      "closeRequested": 2,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-11",
+      "description": "SRU-1",
+      "status": "Planned",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-12",
+      "description": "TGTU-1",
+      "status": "Planned",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-13",
+      "description": "Sour/Stripped Water Pump A Modification - V07",
+      "status": "Planned",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    },
+    {
+      "sn": "PMCC-14",
+      "description": "Sour/Stripped Water Pump B Modification - V07",
+      "status": "Planned",
+      "total": 0,
+      "remaining": 0,
+      "closeRequested": 0,
+      "closed": 0,
+      "clarification": 0
+    }
+  ],
   "pmcc": [
     {
       "sn": "PMCC-01",
