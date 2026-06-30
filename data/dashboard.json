@@ -1,13 +1,13 @@
 {
   "sourceBasis": "Summary by GS PIC",
-  "sourceFile": "(Consolidated) PMCC Punch List_20260629.xlsx",
-  "lastUpdated": "2026-06-29",
+  "sourceFile": "(Consolidated) PMCC Punch List_20260630.xlsx",
+  "lastUpdated": "2026-06-30",
   "kpi": {
     "total": 22317,
-    "remaining": 19430,
-    "closeRequested": 2670,
+    "remaining": 19328,
+    "closeRequested": 2771,
     "closed": 2039,
-    "clarification": 217
+    "clarification": 218
   },
   "process": {
     "total": 3,
@@ -263,10 +263,10 @@
       "description": "TGTU-2 & Common",
       "status": "Active",
       "total": 18122,
-      "remaining": 15537,
-      "closeRequested": 2525,
+      "remaining": 15435,
+      "closeRequested": 2626,
       "closed": 2037,
-      "clarification": 60,
+      "clarification": 61,
       "process": 2
     },
     {
@@ -317,12 +317,12 @@
   "discipline": [
     {
       "name": "Construction / Instrument",
-      "value": 6813,
+      "value": 6764,
       "isProcess": false
     },
     {
       "name": "Construction / Piping",
-      "value": 3539,
+      "value": 3538,
       "isProcess": false
     },
     {
@@ -332,12 +332,12 @@
     },
     {
       "name": "Construction / Electrical",
-      "value": 2059,
+      "value": 2058,
       "isProcess": false
     },
     {
       "name": "Construction / Civil",
-      "value": 1304,
+      "value": 1270,
       "isProcess": false
     },
     {
@@ -372,22 +372,22 @@
     },
     {
       "name": "Engineering / Fire Protection",
-      "value": 30,
-      "isProcess": false
-    },
-    {
-      "name": "Engineering / Civil",
-      "value": 3,
+      "value": 17,
       "isProcess": false
     },
     {
       "name": "QA/QC / QC",
-      "value": 3,
+      "value": 2,
+      "isProcess": false
+    },
+    {
+      "name": "Engineering / Civil",
+      "value": 1,
       "isProcess": false
     },
     {
       "name": "Engineering / Piping",
-      "value": 2,
+      "value": 1,
       "isProcess": false
     }
   ]
