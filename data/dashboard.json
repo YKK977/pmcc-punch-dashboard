@@ -1,13 +1,13 @@
 {
   "sourceBasis": "Summary by GS PIC",
-  "sourceFile": "(Consolidated) PMCC Punch List_20260630.xlsx",
-  "lastUpdated": "2026-06-30",
+  "sourceFile": "(Consolidated) PMCC Punch List_20260701.xlsx",
+  "lastUpdated": "2026-07-01",
   "kpi": {
     "total": 22317,
-    "remaining": 19328,
-    "closeRequested": 2771,
-    "closed": 2039,
-    "clarification": 218
+    "remaining": 19285,
+    "closeRequested": 2778,
+    "closed": 2088,
+    "clarification": 254
   },
   "process": {
     "total": 3,
@@ -197,10 +197,10 @@
       "description": "SS-18",
       "status": "Active",
       "total": 2242,
-      "remaining": 2233,
-      "closeRequested": 9,
+      "remaining": 2213,
+      "closeRequested": 0,
       "closed": 0,
-      "clarification": 0,
+      "clarification": 29,
       "process": 0
     },
     {
@@ -219,10 +219,10 @@
       "description": "PIB-1449",
       "status": "Active",
       "total": 369,
-      "remaining": 365,
-      "closeRequested": 3,
+      "remaining": 359,
+      "closeRequested": 0,
       "closed": 0,
-      "clarification": 1,
+      "clarification": 10,
       "process": 0
     },
     {
@@ -263,10 +263,10 @@
       "description": "TGTU-2 & Common",
       "status": "Active",
       "total": 18122,
-      "remaining": 15435,
-      "closeRequested": 2626,
-      "closed": 2037,
-      "clarification": 61,
+      "remaining": 15418,
+      "closeRequested": 2645,
+      "closed": 2086,
+      "clarification": 59,
       "process": 2
     },
     {
@@ -317,7 +317,7 @@
   "discipline": [
     {
       "name": "Construction / Instrument",
-      "value": 6764,
+      "value": 6755,
       "isProcess": false
     },
     {
@@ -332,7 +332,7 @@
     },
     {
       "name": "Construction / Electrical",
-      "value": 2058,
+      "value": 2039,
       "isProcess": false
     },
     {
@@ -342,12 +342,12 @@
     },
     {
       "name": "Engineering / Electrical",
-      "value": 1231,
+      "value": 1224,
       "isProcess": false
     },
     {
       "name": "Pre-Comm.",
-      "value": 698,
+      "value": 691,
       "isProcess": false
     },
     {
@@ -378,11 +378,6 @@
     {
       "name": "QA/QC / QC",
       "value": 2,
-      "isProcess": false
-    },
-    {
-      "name": "Engineering / Civil",
-      "value": 1,
       "isProcess": false
     },
     {
